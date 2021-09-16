@@ -1,0 +1,224 @@
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="logo">
+            <a href=""><img src="https://i.imgur.com/GjU7CR4.png" alt=""></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <form class="form-inline my-1 my-lg-0 ml-auto">
+                <input [(ngModel)]='tituloPostagem' name="search" class="form-control mr-sm-2 form-control-pesquisar"
+                    type="search" placeholder="Pesquisar uma postagem" aria-label="Pesquisar">
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="button"
+                    (click)='findByTituloPostagem()'>Pesquisar</button>
+            </form>
+            <ul class="navbar-nav ml-auto" id="menu">
+                <li class="nav-item dropdown my-lg-0">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Configurações
+                    </a>
+                    <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/usuario-edit', id]">Alterar perfil</a>
+                        <a class="dropdown-item" routerLink="/tema">Temas</a>
+                    </div>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a class="nav-link active m-0" href="#">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid">
+
+    <!--coluna 1-->
+    <div class="row fundo">
+
+        <div class="col-md-3">
+            <div class="row mt-5 d-flex justify-content-center">
+                <div class="col-md-11 box">
+                    <img src="{{foto}}" alt="Foto perfil" class="img-fluid rounded-circle img-perfil">
+                    <br>
+                    <p class="font-weight-bold text-black mt-3 mb-3 text-center">{{nome}}</p>
+                    <hr mt-5 mb-5>
+                    <p> Data nascimento: </p>
+                    <p>CPF: </p>
+                    <P>Dependentes: </P>
+                    <p>Tipo de moradia: </p>
+                </div>
+            </div>
+        </div>
+
+        <!--coluna 2-->
+
+        <div class="col-md-6 container-fluid">
+            <div class="row mt-5 d-flex justify-content-center">
+                <div class="col-md-12">
+                    <p class="text-center font-size-feed cardtitulo">Feed de notícias</p>
+
+                    <div class="row d-flex justify-content-center mt-3 mb-3">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="titulo" class="mb-0">Título</label>
+                                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+                                        placeholder="Digite o título">
+                                </div>
+                                <div class="form-group">
+                                    <label for="texto" class="mb-0">Texto</label>
+                                    <textarea [(ngModel)]='postagem.conteudo' class="form-control" name="texto"
+                                        id="texto" rows="3"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="texto" class="mb-0">Escolha um tema ou <a routerLink='/tema'>cadastre um
+                                            novo</a>: </label>
+                                    <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema'
+                                        (change)='findByIdTema()'>
+                                        <option *ngFor='let item of listaTemas' value="{{item.id}}">
+                                            {{item.descricao}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" (click)='publicar()'
+                                    data-dismiss="modal">Publicar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--###-->
+                    <div class="container-fluid" id='postagens'>
+                        <div class="row d-flex justify-content-center mt-3 mb-3">
+                            <nav>
+                                <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active text-secondary font-weight-bold"
+                                        id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab"
+                                        aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
+
+                                    <a (click)='findByIdUser()'
+                                        class="nav-item nav-link text-secondary font-weight-bold"
+                                        id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens"
+                                        role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas
+                                        Postagens</a>
+
+                                    <a class="nav-item nav-link text-secondary font-weight-bold"
+                                        id="nav-postagemTema-tab" data-toggle="tab" href="#postagemTema" role="tab"
+                                        aria-controls="nav-postagemTema" aria-selected="false">Postagens por
+                                        Tema</a>
+                                </div>
+                            </nav>
+
+                            <div class="tab-content container-fluid mt-3 mb-3" id="nav-tabContent">
+
+                                <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+                                    aria-labelledby="nav-todasPostagens-tab">
+
+                                    <div class="card-columns">
+
+                                        <div class="card text-center card-postagem" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+                                            
+                                            <div class="card-body p-5">
+                                                <h5 class="card-title m-0">{{item.titulo}}</h5>
+                                                <small class="text-muted">Tema: {{item.tema.descricao}}</small>
+                                                <p class="card-text mt-3">{{item.conteudo}}</p>
+                                                <p class="card-text"><small class="text-muted">{{item.data | date:
+                                                        'dd/MM/yyyy'}} às {{item.data
+                                                        | date: 'HH:mm'}} </small></p>
+                                                <p class="card-text"><small class="text-muted">by:
+                                                        {{item.usuario.nomeCompleto}}</small></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade show" id="minhasPostagens" role="tabpanel"
+                                    aria-labelledby="nav-minhasPostagens-tab">
+
+                                    <div class="card-columns">
+
+                                        <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+                                            
+                                            <div class="card-body p-5">
+                                                <h5 class="card-title m-0">{{item.titulo}}</h5>
+                                                <small class="text-muted">Tema: {{item.tema.descricao}}</small>
+                                                <p class="card-text mt-3">{{item.conteudo}}</p>
+                                                <p class="card-text"><small class="text-muted">{{item.data | date:
+                                                        'dd/MM/yyyy'}} às {{item.data
+                                                        | date: 'HH:mm'}} </small></p>
+                                                <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3"
+                                                href="">Editar</a>
+                                                <a [routerLink]="['/postagem-delete', item.id]" class="text-danger"
+                                                href="">Apagar</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                
+
+                                <div class="tab-pane fade" id="postagemTema" role="tabpanel"
+                                    aria-labelledby="nav-postagemTema-tab">
+                                    <div class="card-columns" *ngFor='let tema of listaTemas'>
+                                        <div class="card text-center card-postagem" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
+                                            <div class="card-body">
+                                                <h5 class="card-title m-0">{{item.titulo}}</h5>
+                                                <p class="card-text mt-3">{{item.conteudo}}</p>
+                                                <p class="card-text"><small class="text-muted">{{item.data | date:
+                                                        'dd/MM/yyyy'}} às {{item.data
+                                                        | date: 'HH:mm'}} </small></p>
+                                                <p class="card-text"><small class="text-muted">by:
+                                                        {{item.usuario.nomeCompleto}}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--coluna 3-->
+        <div class="col-md-3">
+            <div class="row mt-5 d-flex justify-content-center">
+                <div class="col-md-12">
+                    <!--CARD 1-->
+                    <div class="card">
+                        <div class="card-header text-center">Destaque</div>
+                        <div class="card-body card">
+                            <h5 class="card-title text-center">Bolsa Família</h5>
+                            <p class="card-text center">Governo envia ao Congresso Orçamento de 2022 sem reajuste no
+                                Bolsa Família</p>
+                            <a href="https://oglobo.globo.com/economia/governo-envia-ao-congresso-orcamento-de-2022-sem-reajuste-no-bolsa-familia-25178554"
+                                target="_blank" class="btn btn-warning">Visitar</a>
+                        </div>
+                        <div class="card-footer text-center">2 dias atrás</div>
+                    </div>
+
+                    <!--CARD 2-->
+                    <div class="card mt-3">
+                        <div class="card-header text-center">Destaque</div>
+                        <div class="card-body card">
+                            <h5 class="card-title text-center">Auxilio Emergencial</h5>
+                            <p class="card-text center">Veja calendários da 6ª e da 7ª parcelas</p>
+                            <a href="https://www.istoedinheiro.com.br/auxilio-emergencial-veja-calendarios-da-6a-e-da-7a-parcelas/"
+                                target="_blank" class="btn btn-warning">Visitar</a>
+                        </div>
+                        <div class="card-footer text-center">1 dias atrás</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

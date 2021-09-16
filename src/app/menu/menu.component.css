@@ -1,0 +1,11 @@
+.cor {
+    background-color: #ffa500;
+}
+
+.box{
+    border: 2px solid orange;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 15px 0 15px;
+}
+

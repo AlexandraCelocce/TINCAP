@@ -1,0 +1,55 @@
+.backg {
+    background-image: url(https://i.imgur.com/GZWRY5s.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    border-radius: 20px;
+    border-color: rgb(0, 0, 0);
+    background-color: white;
+    padding: 30px;
+    margin-left: 135px;
+}
+
+.ml {
+    margin-left: 60px;
+}
+
+.mt {
+    margin-top: 33px;
+}
+
+button {
+    align-items: center;
+    font-size: 12pt;
+    color: black;
+    width: auto;
+}
+
+.form-control:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 15px #696666;
+}
+
+.text-color-size-title {
+    font-size: 20pt;
+    color: rgb(0, 0, 0);
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    background-color: white;
+    font-size: 12pt;
+    border-color: rgba(0, 0, 0, 0.4);
+    color: black;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.2)
+}

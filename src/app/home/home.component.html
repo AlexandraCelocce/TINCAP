@@ -1,0 +1,47 @@
+<header class="header" #header>
+  <div class="logo">
+      <a href=""><img src="https://i.imgur.com/Gq1DlTp.png" alt=""></a>
+  </div>
+  <div class="register ml-auto">
+      
+      <div class="container-fluid p-0 mb-5">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            
+            <div class="collapse navbar-collapse " id="conteudoNavbarSuportado">  
+                <ul class="navbar-nav ml-auto" id="menu">
+                    <a routerLink='/entrar' class="button-1 text-dark">ENTRAR</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle button-2 text-dark" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CADASTRAR
+                        </a>
+                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" routerLink="/cadastrar-familia">FAMILIA</a>
+                            <a class="dropdown-item" routerLink="/cadastrar-empresa">EMPRESA</a>
+                        </div>
+                    </li>                   
+                </ul>
+            </div>
+        </nav>
+      </div>
+  </div>
+  <div class="toggler">
+      <div class="linha-1"></div>
+      <div class="linha-2"></div>
+      <div class="linha-3"></div>
+  </div>
+</header>
+
+<div class="container-fluid m-0 p-0 main">
+  <section class="container-fluid banner">
+      <div class="row">
+          <div class="col-md-6 col-sm-12 conteudo" #banner>
+              <div class="row align-it">
+                  <h2 class="text-white">Acabar com a pobreza em todas as suas formas, em todos os lugares.</h2>
+                  <button class="btn btn-outline-light saiba-mais text-left"  routerLink='/sobre'>SAIBA MAIS</button>
+              </div>
+          </div>
+      </div>
+      <div class="square" #divisorBanner></div>
+  </section>
+</div>

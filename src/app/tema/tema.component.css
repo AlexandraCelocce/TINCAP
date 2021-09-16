@@ -1,0 +1,43 @@
+.fundo {
+    background-color: rgba(243, 243, 243, 0.541);
+}
+
+
+/*Raio das bordas do form*/
+
+.form-control {
+    background-color: white;
+    font-size: 12pt;
+    border-color: rgba(0, 0, 0, 0.4);
+    color: black;
+}
+
+
+/*Alterações do placeholder*/
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.2)
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-control:focus {
+    border-color: rgb(255, 149, 11);
+    box-shadow: 0 0 10px rgb(255, 167, 51);
+}
+
+
+/*Cor e texto do botão*/
+
+button {
+    align-items: center;
+    font-size: 12pt;
+    width: auto;
+}
+
+.form-control:focus {
+    border-color: rgb(255, 149, 11);
+    box-shadow: 0 0 10px rgb(255, 167, 51);
+}

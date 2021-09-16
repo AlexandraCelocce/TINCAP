@@ -1,0 +1,54 @@
+<div class="container-fluid">
+
+    <div class="row backg d-flex align-items-center">
+
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+            <div class="col-md-12 square">
+
+            </div>
+        </div>
+
+        <div class="col-md-7">
+
+
+            <div class="row d-flex align-items-center">
+
+                <div class="col-md-6 box">
+
+                    <h1 class="text-center mb-4 text-color-size-title">Atualize seu cadastro</h1>
+
+                    <div class="form-group">
+                        <label for="nome" class="mb-0">Nome</label>
+                        <input [(ngModel)]='user.nomeCompleto' class="form-control" type="text" name="nome" id="nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user" class="mb-0">Usuário</label>
+                        <input [(ngModel)]='user.usuario' class="form-control" type="text" name="user" id="user">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foto" class="mb-0">Link da Foto</label>
+                        <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha" class="mb-0">Senha</label>
+                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmSenha" class="mb-0">Confirmar Senha</label>
+                        <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha">
+                    </div>
+
+                    <div class="d-flex justify-content-center mb-0">
+                        <button type="submit" class="btn btn-warning mr-4" (click)='verificaUser()'>Cancelar</button>
+                        <button type="submit" class="btn btn-warning" (click)='atualizar()'>Atualizar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

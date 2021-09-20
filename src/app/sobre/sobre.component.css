@@ -1,20 +1,11 @@
-@keyframes slide {
-    from {
-        transform: translateX(43vw);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
 .bg-sobre {
     height: 100vh;
     background-color: rgb(15, 15, 15);
 }
 
-.titulo-home {
+.titulo-sobre {
     color: orange;
-    font-size: 50px;
+    font-size: 35px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 5px;
     text-align: center;
@@ -22,16 +13,21 @@
 }
 
 p {
-    font-size: 18px;
     text-align: justify;
     color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 30em) {
+    p {
+        font-size: calc( 16px + (50 - 25) * (100vw - 400px) / (2560 - 400));
+    }
 }
 
 
 /* -------------------------------------------------------------------------- */
 
 
-/*             INICIO DA ESTILIZAÇÃO DA HOME-PAGE - TERCEIRA DOBRA            */
+/*             INICIO DA ESTILIZAÇÃO DA HOME-PAGE - SEGUNDA DOBRA             */
 
 
 /* -------------------------------------------------------------------------- */
@@ -50,7 +46,7 @@ p {
 
 .titulo-equipe {
     color: orange;
-    font-size: 50px;
+    font-size: 35px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 5px;
 }
@@ -98,4 +94,120 @@ ul.social-network li {
 
 .copyright {
     color: rgb(202, 202, 202);
+}
+
+#team .card {
+    border: 1px solid orange;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 350px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #3E90CC !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #3E90CC !important;
+}
+
+.frontside .card .card-body img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.social-link {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    margin-right: 20px;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
 }

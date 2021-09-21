@@ -1,7 +1,3 @@
-.container{
-    width: 100vw;
-}
-
 .bg-sobre {
     background-color: rgb(15, 15, 15);
 }
@@ -24,6 +20,7 @@ p {
 @media (max-width: 1090px){
     p{
         font-size: 22px;
+        width: 100vw;
     }
     .titulo-sobre{
         font-size: 35px;
@@ -33,6 +30,7 @@ p {
 @media (max-width: 915px){
     p{
         font-size: 19px;
+        width: 100vw
     }
     .titulo-sobre{
         font-size: 32px;
@@ -40,6 +38,10 @@ p {
 }
 
 @media (max-width: 350px){
+    p{
+        font-size: 16px;
+        width: 100vw
+    }
     .titulo-sobre{
         font-size: 30px;
         letter-spacing: 2px;
@@ -195,9 +197,11 @@ ul.social-network li {
     transition: 1s;
     transform-style: preserve-3d;
 }
+
 .frontside .card, .backside .card {
     min-height: 350px;
 }
+
 .backside .card a {
     font-size: 18px;
     color: #3E90CC !important;

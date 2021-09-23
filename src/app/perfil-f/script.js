@@ -5,6 +5,6 @@ let contador = 0;
 
 p$.innerHTML = contador;
 
-btnIncrementar$.addEventListener('click', function() {
-p$.innerHTML = ++contador;
+btnIncrementar$.addEventListener('click', function () {
+    p$.innerHTML = ++contador;
 });

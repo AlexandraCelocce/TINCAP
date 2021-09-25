@@ -56,7 +56,7 @@ input::placeholder {
 /*Box do form*/
 .box{  
     padding: 50px;
-    height: 10vh;
+    position: absolute;
 }
 
 /*Coluna esqiuerda*/
@@ -70,7 +70,7 @@ input::placeholder {
 .square{
     display: flex;
     position: relative;
-    height: 100vh;
+    height: 100%;
     width: 400px;
     background: rgba(242, 155, 0, 0.35);
 }

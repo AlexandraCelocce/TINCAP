@@ -31,7 +31,7 @@ export class CadastrarEmpresaComponent implements OnInit {
   }
 
   cadastrar(){
-    this.user.tipo = 'empresa'
+    this.user.tipo= 'empresa'
     
     if(this.user.nomeCompleto.length < 5){
       this.alertas.showAlertInfo('O usuário deve conter no mínimo 5 caracteres.')

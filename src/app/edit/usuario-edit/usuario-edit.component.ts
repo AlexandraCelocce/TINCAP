@@ -47,12 +47,13 @@ export class UsuarioEditComponent implements OnInit {
   }
 
   atualizar() {
+    this.user.tipo = environment.tipo
 
     if (this.user.senha != this.confirmarSenha) {
       this.alertas.showAlertDanger('As senhas estão incorretas!')
 
     } else {
-      this.authService.alterar(this.user).subscribe((resp: Usuario) => {
+      this.authService.cadastrar(this.user).subscribe((resp: Usuario) => {
         this.user = resp
         console.log(resp)
         this.router.navigate(['/inicio'])

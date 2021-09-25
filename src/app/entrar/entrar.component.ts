@@ -34,6 +34,12 @@ export class EntrarComponent implements OnInit {
       environment.id = this.userLogin.id
       environment.foto = this.userLogin.foto
       environment.tipo = this.userLogin.tipo
+      environment.famTelefone = this.userLogin.famTelefone
+      environment.famCep = this.userLogin.famCep
+      environment.famEndereco = this.userLogin.famEndereco
+      environment.famBairro = this.userLogin.famBairro
+      environment.empCNPJ = this.userLogin.empCNPJ
+   
 
       if (environment.tipo == 'empresa') {
         this.router.navigate(['/perfil-e'])

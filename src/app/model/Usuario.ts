@@ -7,6 +7,11 @@ export class Usuario{
     public senha: string
     public foto: string
     public tipo: string
+    public famTelefone: number
+    public famCep: string
+    public famEndereco: string
+    public famBairro: string
+    public empCNPJ: string
     public postagem: Postagem[]
 
 }

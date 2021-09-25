@@ -1,13 +1,3 @@
-/*Cor da coluna esquerda*/
-.bg-coluna{
-    background-image: url(https://i.imgur.com/NFqPshN.jpg);
-
-    height: 100vh;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 /*Cor e tamanho do título da tela de cadastro*/
 .text-color-size-title{
@@ -23,6 +13,14 @@
 
 /*Cor e texto do botão*/
 button{
+    align-items: center;
+    font-size: 12pt;
+    color: black;
+    width: auto;
+}
+
+button:hover{
+    background-color: white;
     align-items: center;
     font-size: 12pt;
     color: black;
@@ -46,6 +44,10 @@ button{
     margin-bottom: 10px;
 }
 
+h1{
+    font-family:sans-serif;
+}
+
 /*Alterações do placeholder*/
 input::placeholder {
     color: rgba(0, 0, 0, 0.2)
@@ -53,17 +55,21 @@ input::placeholder {
 
 /*Box do form*/
 .box{  
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
     padding: 50px;
 }
 
 /*Coluna esqiuerda*/
-.square {
+.bg-coluna {
+    background-image: url(https://i.imgur.com/NFqPshN.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.square{
     display: flex;
     position: relative;
     height: 100vh;
     width: 400px;
     background: rgba(242, 155, 0, 0.35);
-    z-index: 1;
 }

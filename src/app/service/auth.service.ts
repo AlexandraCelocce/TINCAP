@@ -30,12 +30,26 @@ export class AuthService {
     return this.http.get<Usuario>(`https://tincap.herokuapp.com/usuario/${id}`)
   }
 
+  buscarCEP(cep:String){
+    return this.http.get(`https://viacep.com.br/ws/${cep}/json/`)
+  }
+
   logado(){
     let ok: boolean = false
 
     if (environment.token != '') {
       ok = true
     }
+    return ok
+  }
+
+  adm(){
+    let ok = false
+
+    if(environment.tipo == 'empresa'){
+      ok = true
+    }
+
     return ok
   }
 

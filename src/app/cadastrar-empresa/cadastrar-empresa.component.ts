@@ -37,7 +37,7 @@ export class CadastrarEmpresaComponent implements OnInit {
       this.alertas.showAlertInfo('O usuário deve conter no mínimo 5 caracteres.')
     }
     if(this.user.usuario.indexOf('@') == -1 || this.user.usuario.indexOf('.') == -1){
-      this.alertas.showAlertInfo('O usuário deve ser um email (e.g. usuario@usuario.com)')
+      this.alertas.showAlertInfo('O usuário deve ser um email (Ex: usuario@usuario.com)')
     }
    
 

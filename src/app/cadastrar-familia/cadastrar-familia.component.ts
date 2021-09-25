@@ -30,25 +30,47 @@ export class CadastrarFamiliaComponent implements OnInit {
   }
 
   cadastrar(){
-    this.user.tipo = 'familia'
+
     
     if(this.user.nomeCompleto.length < 5){
       this.alertas.showAlertInfo('O usuário deve conter no mínimo 5 caracteres.')
     }
-    if(this.user.usuario.indexOf('@') == -1 || this.user.usuario.indexOf('.') == -1){
+    else if(this.user.empCNPJ == ''){
+      this.alertas.showAlertInfo('O campo CNPJ é obrigatorio.')
+    }
+    else if(this.user.usuario.indexOf('@') == -1 || this.user.usuario.indexOf('.') == -1){
       this.alertas.showAlertInfo('O usuário deve ser um email (e.g. usuario@usuario.com)')
     }
-
-    if(this.user.senha.length < 8){
+    else if(this.user.famTelefone > 11 || this.user.famTelefone == null){
+      this.alertas.showAlertInfo('O campo telefone é obrigatorio!')
+    }
+    else if(this.user.senha.length < 8){
       this.alertas.showAlertInfo('A senha deve conter no mínimo 8 dígitos.')
-    }else if(this.user.senha != this.confirmarSenha){
+    }
+    else if(this.user.senha != this.confirmarSenha){
       this.alertas.showAlertInfo('As senhas informadas estão diferentes!')
-    }else{
+    }
+    else{
       this.authService.cadastrar(this.user).subscribe((resp: Usuario) => {
         this.user = resp
+        console.log(resp)
         this.router.navigate(['/entrar'])
         this.alertas.showAlertSuccess('Usuário cadastrado com sucesso')
       })
     }
   }
+
+  consultaCep(valor:String, form:any){
+    this.authService.buscarCEP(valor).subscribe((dados) => this.populaForm(dados,form));
+  }
+
+  populaForm(dados:any, form:any){
+    form.setValue({
+      cep: dados.cep,
+      lougradouro: dados.logradouro,
+      bairro: dados.bairro,
+    })
+  }
+
+
 }

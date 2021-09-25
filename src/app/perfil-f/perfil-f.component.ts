@@ -20,6 +20,10 @@ export class PerfilFComponent implements OnInit {
   foto = environment.foto
   id = environment.id
   tipo = environment.tipo
+  famTelefone = environment.famTelefone
+  famCep = environment.famCep
+  famEndereco = environment.famEndereco
+  famBairro = environment.famBairro
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
@@ -93,7 +97,9 @@ export class PerfilFComponent implements OnInit {
   publicar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
-
+    if(environment.tipo == 'familia'){
+      this.postagem.tipoUsuario = environment.tipo
+    }
     this.user.id = this.idUser
     this.postagem.usuario = this.user
 

@@ -56,6 +56,7 @@ input::placeholder {
 /*Box do form*/
 .box{  
     padding: 50px;
+    height: 50vh;
 }
 
 /*Coluna esqiuerda*/

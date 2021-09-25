@@ -1,5 +1,5 @@
 .backg {
-    background-image: url(https://i.imgur.com/GZWRY5s.jpg);
+    background-image: url(https://i.imgur.com/DJVUsmf.jpg);
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -7,11 +7,11 @@
 }
 
 .box {
-    border-radius: 20px;
-    border-color: rgb(0, 0, 0);
-    background-color: white;
-    padding: 30px;
-    margin-left: 135px;
+    border-radius: 10px;
+
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    margin-left: 280px;
 }
 
 .ml {
@@ -52,4 +52,14 @@ button {
 
 input::placeholder {
     color: rgba(0, 0, 0, 0.2)
+}
+
+.square {
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    width: 400px;
+    left: 20px;
+    background: rgba(242, 155, 0, 0.35);
+    z-index: 1;
 }

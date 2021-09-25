@@ -74,7 +74,7 @@ export class UsuarioEditComponent implements OnInit {
   }
 
   verificaUser(){
-    if(environment.tipo == 'administrador'){
+    if(environment.tipo == 'empresa'){
       this.router.navigate(['/perfil-e'])
     }
     else{

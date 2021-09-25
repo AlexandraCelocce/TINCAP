@@ -10,59 +10,64 @@
 
         <div class="col-md-6">
             <div class="container">
-                <h1 class="text-center mb-4">Cadastro Familia</h1>
+                <h1 class="text-center mb-5">Cadastro Familia</h1>
                 <div class="form-group">
                     <label for="nome" class="mb-0">Nome Completo *</label>
-                    <input [(ngModel)]='user.nomeCompleto' class="form-control" type="text" name="nome" id="nome"
+                    <input [(ngModel)]='user.nomeCompleto' class="form-control form-control-sm" type="text" name="nome" id="nome"
                         placeholder="Digite seu nome completo">
                 </div>
                 <div class="form-group">
                     <label for="usuario" class="mb-0">Usuário *</label>
-                    <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario"
+                    <input [(ngModel)]='user.usuario' class="form-control form-control-sm" type="text" name="usuario" id="usuario"
                         placeholder="Digite seu usuario de acesso">
                 </div>
+                
                 <div class="form-group">
                     <label for="telefone" class="mb-0">Telefone *</label>
-                    <input [(ngModel)]='user.famTelefone' class="form-control" type="text" name="telefone" id="telefone"
+                    <input [(ngModel)]='user.famTelefone' class="form-control form-control-sm" type="text" name="telefone" id="telefone"
                         placeholder="Exemplo: (XX) XXXX-XXXX">
                 </div>
                 
                 <form #f="ngForm">
+                    
                     <div class="form-group">
                         <label for="cep" class="mb-0">CEP *</label>
                         <input [(ngModel)]='user.famCep' #cep="ngModel" (blur)="consultaCep(cep.value, f)"
-                            class="form-control" type="text" name="cep" id="cep" placeholder="Digite seu CEP">
+                            class="form-control form-control-sm" type="text" name="cep" id="cep" placeholder="Digite seu CEP">
                     </div>
+                    
                     <div class="d-flex">
                     <div class="form-group mr-4">
                         <label for="lougradouro" class="mb-0">Endereço</label>
-                        <input [(ngModel)]='user.famEndereco' class="form-control" type="text" name="lougradouro"
+                        <input [(ngModel)]='user.famEndereco' class="form-control form-control-sm" type="text" name="lougradouro"
                             id="lougradouro" placeholder="Preenchido automaticamente">
                     </div>
                     <div class="form-group">
                         <label for="bairro" class="mb-0">Bairro:</label>
-                        <input [(ngModel)]='user.famBairro' class="form-control" type="text" name="bairro" id="bairro"
+                        <input [(ngModel)]='user.famBairro' class="form-control form-control-sm" type="text" name="bairro" id="bairro"
                             placeholder="Preenchido automaticamente" disabled>
                     </div>
                 </div>
                 </form>
                 <div class="form-group">
                     <label for="foto" class="mb-0">Foto de Perfil *</label>
-                    <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto"
+                    <input [(ngModel)]='user.foto' class="form-control form-control-sm" type="text" name="foto" id="foto"
                         placeholder="Informe o link da foto">
                 </div>
 
-                <div class="form-group">
+                <div class="d-flex">
+                <div class="form-group mr-4">
                     <label for="senha" class="mb-0">Senha *</label>
-                    <input [(ngModel)]='user.senha' class="form-control" type="password" name="senha" id="senha"
+                    <input [(ngModel)]='user.senha' class="form-control form-control-sm" type="password" name="senha" id="senha"
                         placeholder="Digite sua senha">
                 </div>
 
                 <div class="form-group">
                     <label for="confirmarSenha" class="mb-0">Confirmar Senha *</label>
-                    <input (input)='confirmeSenha($event)' class="form-control" type="password" name="confirmarSenha"
+                    <input (input)='confirmeSenha($event)' class="form-control form-control-sm" type="password" name="confirmarSenha"
                         id="confirmarSenha" placeholder="Confirme sua senha">
                 </div>
+            </div>
 
                 <div class="d-flex justify-content-center mt-4 mb-0">
                     <button type="submit" class="btn btn-warning btn-lg mr-4" routerLink='/entrar'>Cancelar</button>

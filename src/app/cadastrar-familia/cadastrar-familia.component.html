@@ -8,7 +8,9 @@
             </a>
         </div>
 
-        <div class="col-md-6 box">
+        <div class="col-md-6">
+            <div class="container">
+                <h1 class="text-center mb-4">Cadastro Familia</h1>
                 <div class="form-group">
                     <label for="nome" class="mb-0">Nome Completo *</label>
                     <input [(ngModel)]='user.nomeCompleto' class="form-control" type="text" name="nome" id="nome"
@@ -24,13 +26,15 @@
                     <input [(ngModel)]='user.famTelefone' class="form-control" type="text" name="telefone" id="telefone"
                         placeholder="Exemplo: (XX) XXXX-XXXX">
                 </div>
+                
                 <form #f="ngForm">
                     <div class="form-group">
                         <label for="cep" class="mb-0">CEP *</label>
-                        <input [(ngModel)]='user.famCep' #cep="ngModel" (blur)="consultaCep(cep.value, f)" class="form-control"
-                            type="text" name="cep" id="cep" placeholder="Digite seu CEP">
+                        <input [(ngModel)]='user.famCep' #cep="ngModel" (blur)="consultaCep(cep.value, f)"
+                            class="form-control" type="text" name="cep" id="cep" placeholder="Digite seu CEP">
                     </div>
-                    <div class="form-group">
+                    <div class="d-flex">
+                    <div class="form-group mr-4">
                         <label for="lougradouro" class="mb-0">Endereço</label>
                         <input [(ngModel)]='user.famEndereco' class="form-control" type="text" name="lougradouro"
                             id="lougradouro" placeholder="Preenchido automaticamente">
@@ -40,6 +44,7 @@
                         <input [(ngModel)]='user.famBairro' class="form-control" type="text" name="bairro" id="bairro"
                             placeholder="Preenchido automaticamente" disabled>
                     </div>
+                </div>
                 </form>
                 <div class="form-group">
                     <label for="foto" class="mb-0">Foto de Perfil *</label>
@@ -64,6 +69,8 @@
                     <button type="submit" class="btn btn-warning" (click)='cadastrar()'>Cadastrar</button>
                 </div>
 
+
+            </div>
         </div>
 
     </div>

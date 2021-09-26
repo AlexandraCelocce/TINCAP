@@ -63,3 +63,7 @@ input::placeholder {
     background: rgba(242, 155, 0, 0.35);
     z-index: 1;
 }
+
+h2 {
+    font-family:sans-serif;
+}

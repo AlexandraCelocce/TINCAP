@@ -44,7 +44,7 @@ button:hover{
     margin-bottom: 10px;
 }
 
-h1{
+h2{
     font-family:sans-serif;
 }
 
@@ -55,16 +55,22 @@ input::placeholder {
 
 /*Box do form*/
 .box{  
-    padding: 50px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 /*Coluna esqiuerda*/
 .bg-coluna {
     background-image: url(https://i.imgur.com/42dIvRJ.jpg);
-    height: 80%;
-    background-position: left;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 .square{
     display: flex;

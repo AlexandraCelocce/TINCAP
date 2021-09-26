@@ -5,10 +5,31 @@
 .titulo-sobre {
     color: orange;
     font-size: 45px;
+    letter-spacing: 5rem;
+    text-transform: uppercase;
+    padding: 2rem 1rem;
+    position: absolute;
+    padding: 2rem 1rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 5px;
     text-align: center;
     margin-bottom: 35px;
+    opacity: 0;
+    animation: fadeIntext 3.0s 1.5s both;
+}
+
+.text-block {
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeIntext {
+    from { 
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 p {
@@ -67,8 +88,32 @@ p {
 .titulo-equipe {
     color: orange;
     font-size: 45px;
+    letter-spacing: 5rem;
+    text-transform: uppercase;
+    padding: 2rem 1rem;
+    position: absolute;
+    padding: 2rem 1rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 35px;
+    opacity: 0;
+    animation: fadeIntextone 6.5s 3.5s both;
+}
+
+.text-bl2 {
+    position: relative;
+    overflow: hidden;
+}
+
+
+@keyframes fadeIntextone {
+    from { 
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 1090px){
@@ -240,4 +285,29 @@ ul.social-network li {
 .card-text{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 17px;
+}
+
+/* ANIMAÇÃO DO TEXTO SOBRE NÓS */
+
+.text-SN {
+    color: white;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIntext2 6.5s 2.4s both;
+
+}
+
+.text-block2 {
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeIntext2 {
+    from { 
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

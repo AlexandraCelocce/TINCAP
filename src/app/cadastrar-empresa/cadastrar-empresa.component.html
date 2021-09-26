@@ -1,62 +1,69 @@
 <div class="container-fluid">
-    <div class="row d-flex align-items-center">
-
-        <div class="col-md-6 bg-coluna">
-            <a routerLink='/home' class="text-white text-left square">
-                <i><img class="mt-2 ml-3" style="width: 170px; height: 51px;" src="https://i.imgur.com/GjU7CR4.png"
-                        routerLink='/home' aria-hidden="true" alt="logo"></i>
-            </a>
-        </div>
+    <div class="row bg-coluna align-items-center">
 
         <div class="col-md-6">
-            <div class="box">
-                <h1 class="text-center mb-5">Cadastro Empresa</h1>
-                <div class="form-group">
-                    <label for="nome" class="mb-0">Razão Social *</label>
-                    <input [(ngModel)]='user.nomeCompleto' class="form-control" type="text" name="nome" id="nome"
-                        placeholder="Digite a razão social">
-                </div>
-                <div class="form-group">
-                    <label for="nome" class="mb-0">CNPJ *</label>
-                    <input [(ngModel)]='user.empCNPJ' class="form-control" type="text" name="cnpj" id="cnpj"
-                        placeholder="Digite o CNPJ da empresa">
-                </div>
-                <div class="form-group">
-                    <label for="usuario" class="mb-0">Usuário *</label>
-                    <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario"
-                        placeholder="Digite seu usuario de acesso">
-                </div>
-                <div class="form-group">
-                    <label for="telefone" class="mb-0">Telefone *</label>
-                    <input [(ngModel)]='user.famTelefone' class="form-control" type="telefone" name="telefone" id="telefone"
-                        placeholder="Exemplo: (XX) XXXX-XXXX">
-                </div>
-                <div class="form-group">
-                    <label for="foto" class="mb-0">Foto de Perfil</label>
-                    <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto"
-                        placeholder="Informe o link da foto">
-                </div>
-
-                <div class="form-group">
-                    <label for="senha" class="mb-0">Senha *</label>
-                    <input [(ngModel)]='user.senha' class="form-control" type="password" name="senha" id="senha"
-                        placeholder="Digite sua senha">
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmarSenha" class="mb-0">Confirmar Senha *</label>
-                    <input (input)='confirmeSenha($event)' class="form-control" type="password" name="confirmarSenha"
-                        id="confirmarSenha" placeholder="Confirme sua senha">
-                </div>
-
-                <div class="d-flex justify-content-center mt-4 mb-0">
-                    <button type="submit" class="btn btn-warning btn-lg mr-4" routerLink='/entrar'>Cancelar</button>
-                    <button type="submit" class="btn btn-warning" (click)='cadastrar()'>Cadastrar</button>
-                </div>
-
-
+            <div class="col-md-12 square">
+                <a routerLink='/home' class="text-white text-left">
+                    <i><img class="mt-2" style="width: 170px; height: 51px;" src="https://i.imgur.com/GjU7CR4.png"
+                            routerLink='/home' aria-hidden="true" alt="logo"></i>
+                </a>
             </div>
         </div>
 
+        <div class="col-md-6">
+            <div class="row d-flex justify-content-center text-color-size-form">
+                <div class="col-md-8 box">
+                    <h2 class="text-center mb-5">Cadastro Empresa</h2>
+
+                    <div class="form-group">
+                        <label for="nome" class="mb-0">Razão Social *</label>
+                        <input [(ngModel)]='user.nomeCompleto' class="form-control" type="text" name="nome" id="nome"
+                            placeholder="Digite a razão social">
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="form-group mr-3">
+                            <label for="nome" class="mb-0">CNPJ *</label>
+                            <input [(ngModel)]='user.empCNPJ' class="form-control" type="text" name="cnpj" id="cnpj"
+                                placeholder="Digite o CNPJ da empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="usuario" class="mb-0">Usuário *</label>
+                            <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario"
+                                id="usuario" placeholder="Digite seu usuario de acesso">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone" class="mb-0">Telefone *</label>
+                        <input [(ngModel)]='user.famTelefone' class="form-control" type="telefone" name="telefone"
+                            id="telefone" placeholder="Exemplo: (XX) XXXX-XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="foto" class="mb-0">Foto de Perfil</label>
+                        <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto"
+                            placeholder="Informe o link da foto">
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="form-group mr-3">
+                            <label for="senha" class="mb-0">Senha *</label>
+                            <input [(ngModel)]='user.senha' class="form-control" type="password" name="senha" id="senha"
+                                placeholder="Digite sua senha">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmarSenha" class="mb-0">Confirmar Senha *</label>
+                            <input (input)='confirmeSenha($event)' class="form-control" type="password"
+                                name="confirmarSenha" id="confirmarSenha" placeholder="Confirme sua senha">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-4 mb-0">
+                        <button type="submit" class="btn btn-warning btn-lg mr-4" routerLink='/entrar'>Cancelar</button>
+                        <button type="submit" class="btn btn-warning" (click)='cadastrar()'>Cadastrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>

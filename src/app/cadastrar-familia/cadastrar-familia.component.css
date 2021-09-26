@@ -59,7 +59,7 @@ input::placeholder {
     height: 250px;
 }
 
-/*Coluna esqiuerda*/
+/*Coluna esquerda*/
 .bg-coluna {
     background-image: url(https://i.imgur.com/NFqPshN.jpg);
     height: 100vh;
@@ -70,10 +70,12 @@ input::placeholder {
 .box{  
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    padding: 50px;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
-/*Coluna esqiuerda*/
+/*Coluna esquerda*/
 .square {
     display: flex;
     position: relative;
@@ -81,4 +83,8 @@ input::placeholder {
     width: 400px;
     background: rgba(242, 155, 0, 0.35);
     z-index: 1;
+}
+
+h2{
+    font-family:sans-serif;
 }

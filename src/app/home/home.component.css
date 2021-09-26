@@ -223,3 +223,25 @@ header {
 .btn:hover {
   transform: scale(105%);
 }
+
+/* TENTATIVA DE ANIMAR O TEXTO DA HOME */
+
+.text3 {
+  color: white;
+  opacity: 0;
+  animation: fadeIntext3 2.5s 0.1s both;
+}
+
+.text-block3 {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes fadeIntext3 {
+  from { 
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

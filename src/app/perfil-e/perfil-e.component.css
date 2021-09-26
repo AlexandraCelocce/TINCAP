@@ -67,7 +67,7 @@ input{
 }
 
 input::placeholder {
-    color: rgba(0, 0, 0, 0.2)
+    color: rgba(0, 0, 0, 0.4)
 }
 
 .form-group {
@@ -85,6 +85,13 @@ input::placeholder {
 
 .cardtitulo {
     color: black;
+}
+
+.tel{
+    border: 1px solid orange;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
 }
 
 .img-perfil {

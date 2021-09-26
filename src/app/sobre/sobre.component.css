@@ -5,17 +5,15 @@
 .titulo-sobre {
     color: orange;
     font-size: 45px;
-    letter-spacing: 5rem;
     text-transform: uppercase;
     padding: 2rem 1rem;
     position: absolute;
     padding: 2rem 1rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     text-align: center;
     margin-bottom: 35px;
-    opacity: 0;
-    animation: fadeIntext 3.0s 1.5s both;
+    animation: fadeIntext 2s both;
 }
 
 .text-block {
@@ -32,14 +30,15 @@
     }
 }
 
-p {
+.paragrafos-sobre {
     font-size: 25px;
     text-align: justify;
     color: rgb(255, 255, 255);
+    font-family: Montserrat;
 }
 
 @media (max-width: 1090px){
-    p{
+    .paragrafos-sobre{
         font-size: 22px;
         width: 100vw;
     }
@@ -49,7 +48,7 @@ p {
 }
 
 @media (max-width: 915px){
-    p{
+    .paragrafos-sobre{
         font-size: 19px;
         width: 100vw
     }
@@ -59,7 +58,7 @@ p {
 }
 
 @media (max-width: 350px){
-    p{
+    .paragrafos-sobre{
         font-size: 16px;
         width: 100vw
     }
@@ -88,17 +87,17 @@ p {
 .titulo-equipe {
     color: orange;
     font-size: 45px;
-    letter-spacing: 5rem;
-    text-transform: uppercase;
-    padding: 2rem 1rem;
-    position: absolute;
-    padding: 2rem 1rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 5px;
-    text-align: center;
-    margin-bottom: 35px;
-    opacity: 0;
-    animation: fadeIntextone 6.5s 3.5s both;
+    animation: fadeIntextone 3s both;
+}
+
+.titulo-ajude {
+    color: orange;
+    font-size: 45px;
+    padding: 2rem 1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 3px;
 }
 
 .text-bl2 {
@@ -106,6 +105,16 @@ p {
     overflow: hidden;
 }
 
+.paragrafos{
+    color: black;
+    font-size: 16px;
+    font-family: Montserrat;
+}
+.title{
+    font-size: 20px;
+    font-family: Montserrat;
+    color: rgb(216, 140, 0);
+}
 
 @keyframes fadeIntextone {
     from { 
@@ -159,9 +168,7 @@ ul.social-network li {
     color: #0072b1;
 }
 
-.bg-footer {
-    background-color: black;
-}
+
 
 .titulo {
     font-size: 18px;
@@ -294,7 +301,7 @@ ul.social-network li {
     position: absolute;
     text-align: center;
     opacity: 0;
-    animation: fadeIntext2 6.5s 2.4s both;
+    animation: fadeIntext2 3.5s 1.0s both;
 
 }
 
@@ -309,5 +316,103 @@ ul.social-network li {
     }
     to {
         opacity: 1;
+    }
+}
+
+#myFooter {
+    background-color: #303030;
+    color: white;
+    padding-top: 30px;
+}
+
+#myFooter .footer-copyright {
+    background-color: black;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: #d88c00;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a{
+    font-size: 50px;
+    text-align: center;
+    color: #FFA500;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+.instagram:hover {
+    color: purple;
+}
+
+.facebook:hover{
+    color: #0077e2;
+}
+
+.twitter:hover {
+    color: #00aced;
+}
+
+#myFooter .btn { 
+    background-color: #ce8600;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
     }
 }

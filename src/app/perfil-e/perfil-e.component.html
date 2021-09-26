@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <form class="form-inline my-1 my-lg-0 ml-auto">
                 <input [(ngModel)]='tituloPostagem' name="search" class="form-control mr-sm-2 form-control-pesquisar"
-                    type="search" placeholder="Pesquisar uma postagem pelo titulo" aria-label="Pesquisar">
+                    type="search" placeholder="Pesquise uma postagem pelo titulo" aria-label="Pesquisar">
                 <button [(ngModel)]='nomeTema' class="btn btn-outline-warning my-2 my-sm-0" type="button"
                     (click)='findByTituloPostagem()'>Pesquisar</button>
             </form>
@@ -152,7 +152,7 @@
                                                 <p class="text-left"><small class="text-muted">Tipo:
                                                         {{item.tema.descricao}}</small></p>
                                                 <p class="card-text mt-3 text-left">{{item.conteudo}}</p>
-                                                <p *ngIf='item.tipoUsuario' class="card-text mt-3 text-left">Telefone:
+                                                <p *ngIf='item.tipoUsuario' class="card-text mt-3 tel">Entre em contato:
                                                     {{item.usuario.famTelefone}}</p>
 
                                             </div>

@@ -70,9 +70,7 @@ input::placeholder {
 .box{  
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    padding: 15px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 20px 40px 20px 40px;
 }
 
 /*Coluna esquerda*/

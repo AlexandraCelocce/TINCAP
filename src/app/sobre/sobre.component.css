@@ -89,7 +89,7 @@
     font-size: 45px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 5px;
-    animation: fadeIntextone 3s both;
+    animation: fadeIntext2 6.1s 4.0s both;
 }
 
 .titulo-ajude {
@@ -414,5 +414,54 @@ ul.social-network li {
 @media screen and (max-width: 767px) {
     #myFooter {
         text-align: center;
+    }
+}
+
+/* Animação ENTENDA COMO SUA AJUDA É IMPORTANTE "TITULO" */
+.text-ent {
+    color: #ce8600;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIntext2 3.1s 2.3s both;
+
+}
+
+.text-block3 {
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeIntext2 {
+    from { 
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animação texto sobre como sua ajuda é importante */
+
+.text-text {
+    color: #ce8600;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIntext2 3.1s 3.0s both;
+
+}
+
+.text-block4 {
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeIntext2 {
+    from { 
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

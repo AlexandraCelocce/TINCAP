@@ -34,7 +34,7 @@
     font-size: 25px;
     text-align: justify;
     color: rgb(255, 255, 255);
-    font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
 }
 
 @media (max-width: 1090px){
@@ -105,10 +105,15 @@
     overflow: hidden;
 }
 
+.mb{
+    margin-bottom: 32px;
+}
+
 .paragrafos{
     color: black;
     font-size: 16px;
-    font-family: Montserrat;
+    font-family: "Montserrat", sans-serif;
+    text-align: justify;
 }
 .title{
     font-size: 20px;
